@@ -175,3 +175,5 @@ cython_debug/
 
 # Music Files
 .wav
+samples/
+*.wav
