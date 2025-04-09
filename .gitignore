@@ -177,3 +177,8 @@ cython_debug/
 .wav
 samples/
 *.wav
+*.jpeg
+*.png
+images/
+*p
+
