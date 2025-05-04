@@ -46,7 +46,7 @@ def split_wav(input_file, output_path, segment_length=5):
                 continue
                 
             # Create output file
-            output_file = os.path.join(output_path, f"{base_name}_segment_{i+1:03d}.wav")
+            output_file = os.path.join(output_path, f"{base_name}_{i+1:03d}.wav")
             
             # Write segment to file
             with wave.open(output_file, 'wb') as segment:
@@ -60,7 +60,18 @@ def split_wav(input_file, output_path, segment_length=5):
 
 # Example usage
 if __name__ == "__main__":
-    input_wav = "classical.wav"  # Replace with your input file
-    output_dir = "samples"  # Replace with your desired output directory
+    input_wav = "maestro\MIDI-Unprocessed_Recital1-3_MID--AUDIO_01_R1_2018_wav--4.wav"  # Replace with your input file
+    output_dir = "maestro\samples"  # Replace with your desired output directory
+
+
+    folder_path='maestro'
+    for filename in os.listdir(folder_path):
+        # Check if the file is a .txt file
+        if filename.endswith('.wav'):
+            # Construct full file path
+            audio_file = os.path.join(folder_path, filename)
+            split_wav(audio_file, output_dir, segment_length=5)
+
+           
     
-    split_wav(input_wav, output_dir, segment_length=5)
+    #split_wav(input_wav, output_dir, segment_length=5)
