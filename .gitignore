@@ -180,5 +180,11 @@ samples/
 *.jpeg
 *.png
 images/
+piano/
 *p
-
+checkpoints/
+reconstructions/
+runs/
+classical/
+maestro/
+*bin
